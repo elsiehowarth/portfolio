@@ -9,18 +9,15 @@
 		<!--include jquery-->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<!-- //http://dinbror.dk/blog/bPopup/#Usage-->
-    	<!--<script src="bpopup.js"></script>-->
 	</head>
 
 	<body>
 		<header>
 			<div id="header-container">
 				<div id="logo">
-					<img src="Images/logoWhite.png" alt="Elsie Howarth Logo">
+					<h1><img src="Images/logoWhite.png" alt="Elsie Howarth Portfolio"></h1>
 				</div>
 				<div id="navigation">
-					<!--navigation goes here-->
 					<ul>
 						<li>
 							<a href="" class="active">Home</a>
@@ -29,49 +26,58 @@
 							<a href="#my-story" id="homepage-about">About</a>
 						</li>
 						<li>
-							<a href="#expertise" id="homepage-expertise">Expertise</a>
+							<a href="#my-work" id="homepage-my-work">My Work</a>
 						</li>
 					</ul>
 				</div>
 				<div id="header-content">
-					<h1>Elsie Howarth Portfolio</h1>
-					<p>Hi, My name is Elsie Howarth. I am a web developer based in Newcaqstle Upon Tyne. This portfolio is to tell you a bit about myself, and show some of my work</p>
-					<button class="learnMore">Learn More</button>
+					<h2>Elsie Howarth Portfolio</h2>
+					<p>Hi, My name is Elsie Howarth. I am a web developer based in Newcastle Upon Tyne. This portfolio is to tell you a bit about myself, and show some of my work</p>
 				</div>
 			</div>
 		</header>
-		<div id="my-story">
-			<img src="Images/logoBlack.png" alt="Elsie Howarth Logo">
-			<div id="my-story-content">
-				<h2>My Story</h2>
-				<p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus</p>
-				<p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-				<button class="learnMore">Learn More</button>
+		<div id="wrapper">
+			<div id="my-story">
+				<img src="Images/elsieHowarth.jpg" alt="Elsie Howarth Image">
+				<div id="my-story-content">
+					<h2>My Story</h2>
+					<p>Hi, my name is Elsie Howarth and I am a Northumbria University Graduate in Web Design and Development.  I am originally from Blackpool and moved to Newcastle to study at university.</p>
+
+					<p>Whilst at university I study many modules which specialised in web technologies. I am know confident in languages such as HTML, CSS, PHP, SQL, Javascript and JQuery. I worked hard in my studies and manage to secure myself a first class degree.</p>
+
+					<p>I went to university for four years as I completed a placement year as a software developer at HMRC. Once I had finished university, I took a web developer role at a local bathroom company. I then moved on to an energy company which I was also a web developer.</p>
+
+					<p>I have had an great experience in Newcastle Upon Tyne so far, making friends, getting my degree and also gaining valuable experience in frontend development roles. The only down side is leaving my family and dogs (the cuties at the top of my page).</p>
+				</div>
 			</div>
-		</div>
-		<div id="expertise">
-			<div id="expertise-content">
-				<h2>Expertise</h2>
-				<p>dolor sit amet proin gravida nibh vel velit</p>
-				<div class="expertise-icon-content">
-					<i class="fa fa-globe fa-5x" aria-hidden="true"></i>
-					<h3>Web Design &amp; Development</h3>
-					<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
-				</div>
-				<div class="expertise-icon-content">
-					<i class="fa fa-mobile fa-5x" aria-hidden="true"></i>
-					<h3>Mobile Application Development</h3>
-					<p>Proin gravida nibh vel velit auctor aliquet Aenean.</p>
-				</div>
-				<div class="expertise-icon-content">
-					<i class="fa fa-database fa-5x" aria-hidden="true"></i>
-					<h3>Database</h3>
-					<p>Proin gravida nibh vel velit auctor aliquet Aenean.</p>
+			<div id="my-work">
+				<div id="my-work-content">
+					<h2>My work</h2>
+					<p>Here are some examples of projects that I have worked on</p>
+					<div class="expertise-icon-content">
+						<img src="Images/dogProject.png" alt="Dog Project Logo">
+						<a href=""><h3>Multiple Page VS Single Page</h3></a>
+						<p>For my dissertation I carried out a study to find out whether a <a href="http://unn-w13004905.newnumyspace.co.uk/dogProject/spa-dogProject/#/">Single Page Application</a> creates a better experience than a <a href="http://unn-w13004905.newnumyspace.co.uk/dogProject/mpa-dogProject/index.php" target="_blank">Multiple Page Application</a></p>
+					</div>
+					<div class="expertise-icon-content">
+						<img src="Images/foreverukenergy.png" alt="Forever UK Energy">
+						<a href="https://foreverukenergy.co.uk/" target="_blank"><h3>Forever UK Energy</h3></a>
+						<p>Whilst working for Forever UK Energy I helped create their online presence from scratch. This included multiple websites and mamangement of social media</p>
+					</div>
+					<div class="expertise-icon-content">
+						<img src="Images/moneySaverEnergy.png" alt="Money Saver Energy">
+						<a href="https://moneysaverenergy.foreverukenergy.co.uk/" target="_blank"><h3>Money Saver Energy</h3></a>
+						<p>Money Saver Energy is an example of one of the landing pages I developed for Forver UK energy</p>
+					</div>
 				</div>
 			</div>
 		</div>
 		<footer>
 			<div id="footer-content">
+				<i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+				<i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+				<i class="fa fa-github fa-2x" aria-hidden="true"></i>
+				<i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
 				<p>Copyright &copy; Elsie Howarth</p>
 			</div>
 		</footer>
@@ -85,27 +91,11 @@
 					'slow');
 			});
 
-			$("#homepage-expertise").click(function() {
+			$("#homepage-my-work").click(function() {
 				$('html,body').animate({
-					scrollTop: $("#expertise").offset().top},
+					scrollTop: $("#my-work").offset().top},
 					'slow');
 			});
-
-			//opening video in box infront of web page
-			$(function() {
-
-	            // Binding a click event
-	            $('#video-button').bind('click', function(e) {
-
-	                // Prevents the default action to be triggered. 
-	                e.preventDefault();
-
-	                // Triggering bPopup when click event is fired
-	                $('#video-popup').bPopup();
-
-	            });
-
-        	});
 	
 			
 		</script>
