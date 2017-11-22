@@ -1,0 +1,89 @@
+<!--this loads a angular library, main.js, controllers and service-->
+<!-- a view is a section on a web page which is any container tag e.g. div, article etc, section. inside the view any properties the controller sets can be referrenced inside the view {{usingBrackets}} also possible inside a view to link to a controller-->
+<!--web page loads the main.js which links the url to the controller-->
+		
+<!DOCTYPE html>
+<!--call the name of the app, this is used in the Controller and Dataservice-->
+<html data-ng-app='DogApp'>
+    <!--open head tag-->
+    <head>
+        <!--set title of page-->
+        <title>Dog Project- Home Page</title>
+        <!--meta tag-->
+        <meta charset="UTF-8">
+        <!--meta tag-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--link to font awesome-->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+        <!--link to more fonts-->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700' rel='stylesheet' type='text/css' />
+        <!--link to stylesheet-->
+        <link rel="stylesheet" type="text/css" href="../Style/style.css" />
+    <!--end head tag-->
+    </head>
+    <!--open body tag-->
+    <body>
+        <!--open header tag-->
+        <header id="main-header">
+            <!--open header div-->
+            <div id="header-content">
+                <!--open wrapper-->
+                <div class="wrapper">
+                    <!--header logo div-->
+                    <div id="header-logo">
+                        <!--logo-->
+                        <a class="logo"><i class="fa fa-paw"></i><span class="dog">Dog</span><span class="project">Project</span></a>
+                    <!--close div-->
+                    </div>
+                <!--close div-->
+                </div>
+            <!--close div-->
+            </div>
+
+            <!--open header navigation div-->
+            <div id="header-navigation">
+                <!--open wrapper-->
+                <div class="wrapper">
+                    <!--open left nav div-->
+                    <nav class="left-nav">
+                        <ul>
+                            <!--link to home page-->
+                            <li><a href="#">Home</a></li>
+                        </ul>
+                    <!--close nav-->
+                    </nav>
+                <!--close div-->
+                </div>
+            <!--close div-->
+            </div>
+        <!--close header tag-->
+        </header>
+
+        <!--open main tag-->
+        <main id="content">
+            <!--always include the recently added page, and also call controller-->
+            <article data-ng-controller="recentlyAddedController" data-ng-include="'js/partials/recentlyAdded.html'"></article>
+                <!--display recently add as a view within this page-->
+                <article data-ng-view></article>
+        <!--close main tag-->
+        </main>
+
+        <!--open footer tag-->
+        <div id="footer">
+            <!--include the writing within the footer-->
+            <p>Copyright &copy; 2017 - All Rights Reserved - Dog Project - <a href="#terms">Terms and Conditions</a></p>
+        <!--close div-->
+        </div>
+
+        <!-- load the basic angular libraries-->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.js"></script>
+
+        <!-- link to our application files -->
+        <script src="js/main.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/services.js"></script>
+    <!--end body tag-->
+    </body>
+</html>

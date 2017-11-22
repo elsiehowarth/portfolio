@@ -1,0 +1,86 @@
+<!--this loads a angular library, main.js, controllers and service-->
+<!-- a view is a section on a web page which is any container tag e.g. div, article etc, section. inside the view any properties the controller sets can be referrenced inside the view {{usingBrackets}} also possible inside a view to link to a controller-->
+<!--web page loads the main.js which links the url to the controller-->
+		
+<!DOCTYPE html>
+<html data-ng-app='DogApp'>
+    <head>
+        <title>Dog Project- Home Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../Style/style.css" />
+    </head>
+    <body>
+    <header id="main-header">
+    <div id="header-content">
+        <div class="wrapper">
+            <div id="header-logo">
+                <a href="index.php" class="logo"><i class="fa fa-paw""></i><span class="dog">Dog</span><span class="project">Project</span></a>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div id="header-navigation">
+            <div class="wrapper">
+
+            <nav class="left-nav">
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="findADog.php">Find a Dog</a></li>
+                    <li><a href="addAdvert.php">Sell your Dog</a></li>
+                    <li><a href="aboutus.php">About Us</a></li>
+                </ul>
+            </nav>
+
+                <nav class="right-nav">
+
+                    <?php if(is_null($userInformation)): ?>
+                        <ul>
+                        <li><a href="./login.php"><i class="fa fa-sign-in fa-fw"></i>Sign In</a></li>
+                        <li><a href="./register.php"><i class="fa fa-user-plus fa-fw"></i>Register</a><li>
+                        <?php endif; ?>
+                        </ul>
+
+                        <?php if(!is_null($userInformation)): ?>
+                        <ul>
+                            <li class="dropdown">
+                                <a href="" class="dropbtn"><i class="fa fa-cog fa-fw"></i><?php echo $userInformation['first_name'] . ' ' . $userInformation['surname'];?></a>
+                                <div class="dropdown-content">
+                                    <a href="./accountDetails.php"><i class="fa fa-fw fa-user"></i>My Account</a> 
+                                    <a href="./addAdvert.php"><i class="fa fa-fw fa-plus"></i>Post an Advert</a>   
+                                    <a href="./logout.php"><i class="fa fa-fw fa-sign-out"></i>Log Out</a>
+                                    <?php endif; ?>
+                                </div>
+                            </li>
+                        </ul>
+                </nav>
+
+            </div>
+    </div>
+</header>
+
+<main id="content">
+  <div class="wrapper">
+      <div id="page">
+         <section data-ng-controller="IndexController">
+     	 		<!-- use double braces to refer to a property defined in IndexController -->
+      		<h2>{{title}}</h2>
+		    </section>
+      </div>
+  </div>
+</main>
+
+         
+      <!-- load the basic angular libraries, though initially we'll only need the first two -->
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.js"></script>
+ 
+      <!-- link to our application files -->
+      <script src="js/main.js"></script>
+      <script src="js/controllers.js"></script>
+         
+    </body>
+</html>

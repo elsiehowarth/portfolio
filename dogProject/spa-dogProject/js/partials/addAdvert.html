@@ -1,0 +1,94 @@
+<!--open main tag-->
+<main id="content">
+	<!--open wrapper -->
+	<div class="wrapper">
+		<!--heading-->
+		<h3>
+			Create a New Advert
+		</h3>
+		<!--paragrapgh with instructions-->
+		<p>Please complete the form below with advert details</p>
+		<!--open form tag which calls the add advert controller for the data to bind to that controller-->
+		<form ng-controller="AddAdvertController" id="advert">
+			<!--open fieldset-->
+			 <fieldset>
+				 <!--heading-->
+				 <h4>
+					Dogs Details
+				</h4>
+				 <!--advert title input field and label, input field include ng-model to store the inputted data-->
+			 	<div id="form-content">
+                	<label for="advert_title">Dog Name/Title*</label></br>
+						<!--input text tag-->
+                    	<input type="text" name="advert_title" required="required" placeholder='&#xf007; Please Enter a Advert Title' ng-model="advert_title" maxlength="100">
+            	</div>
+				<!--end of advert title-->
+				 <!--advert description input field and label, input field include ng-model to store the inputted data-->
+            	<div id="form-content">
+                	<label for="description">Description*</label></br>
+						<!--textarea tag-->
+                    	<textarea type="text" name="description" required="required" ng-model="description" maxlength="4000"></textarea>
+            	</div>
+				 <!--end of advert description-->
+				 <!--advert dog breed select field and label, ng-model used to store data into scope-->
+				 <div class="form-content">
+					 <label for="breed">Dog Breed*</label></br>
+					 	<!--select input field-->
+						 <select class="" required id="breedID" name="breedID" ng-model="breedID">
+							 <!--default option-->
+							 <option value="" disabled>Please Select a Breed</option>
+							 <!--lists breed names from the database by calling the data retrieved and sent in to the scope-->
+							 <option data-ng-repeat="breed in breeds" value="{{breed.breedID}}">{{breed.breed_name}}</option>
+						 </select>
+				 </div>
+				 <!--end of dog breed selection-->
+				 <!--date of birth input field and label, ng-model used to store data in to scope-->
+	            <div id="form-content">
+                	<label for="dob">Date of Birth*</label></br>
+						<!--input date tag-->
+						<input type="date" class="form-control" required="required" id="dob" required="required" name="dob" placeholder='&#xf073;; Enter your their date of birth' ng-model="dob">
+             	</div>
+				 <!--end of date of birth div-->
+				 <!--price input field and label, ng-model used to store data in to scope-->
+	            <div id="form-content">
+                	<label for="price">Price*</label></br>
+						<!--input text tag-->
+                    	<input type="number" name="price" required="required" placeholder='£' ng-model="price">
+            	</div>
+				 <!--end of price input-->
+				 <!--county select field and label, ng-model used to store data into the scope-->
+            	<div class="form-content">
+                	<label for="county">Where do they live*</label></br>
+						<!--select input field-->
+						<select class="" required id="countyID" name="countyID" ng-model="countyID">
+							<!--default option-->
+							<option value="" disabled>Please Select a County</option>
+							<!--lists county names from the database by calling the data retrieved and sent in to the scope-->
+							<option data-ng-repeat="county in countys" value="{{county.countyID}}">{{county.countyname}}</option>
+						</select>
+            	</div>
+				 <!--end of county selection-->
+				 <!--gender select field and label, ng-model used to store data in to the scope-->
+				 <div class="form-content">
+                	<label for="gender">Gender*</label></br>
+					 	<!--select input field-->
+                    	<select id="gender" name="gender" ng-model="gender">
+							<!--default option-->
+                        	<option value="" disabled>Please Select a Gender</option>
+							<!--male option-->
+                        	<option value="Male">Male</option>
+							<!--female option-->
+                        	<option value="Female">Female</option>
+                    	</select>
+				 </div>
+				 <!--end of gender selection-->
+				 <!--submit button which will submit form, ng-click used to call class in controller and store all the inputted data-->
+				 <input type="submit" name="submit" value="Next" ng-click="addAdvert($event, 'imageUpload')">
+			 <!--close fieldset-->
+			 </fieldset>
+		<!--close form tag-->
+		 </form>
+	<!--close div-->
+	</div>
+<!--close main tag-->
+</main>

@@ -1,0 +1,59 @@
+<!--open main tag-->
+<main id="content">
+	<!--display banner-->
+	<div id="banner">
+		<!--add text on to the banner-->
+        <div id="banner-text">
+             <h1>A house is not a home without a dog</h1>
+        </div>
+	<!--close banner div-->
+    </div>
+	<!--open wrapper-->
+    <div class="wrapper">
+		<!--recently added advert div-->
+		<div id="recentlyAdded">
+			<!--unordered list-->
+			<ul class="tabs">
+				<!--header within a list for the recently added advert, data-ng-click used to call controller class to show recent adverts-->
+				<h2><li><a data-ng-click="selectRecentAdverts($event, 'recentAdverts')">Recently Added</a></li></h2>
+				<!--header within a list for the view all adverts, data-ng-click used to call controller class to show all adverts-->
+				<h2><li><a data-ng-click="selectAllAdverts($event, 'allAdverts')">View All adverts</a></li></h2>
+				<!--header within a list for the sell your dog, data-ng-click used to call controller class to sell form-->
+				<h2><li><a data-ng-click="selectSellForm($event, 'sellForm')">Sell Your Dog</a></li></h2>
+			<!--close list-->
+			</ul>
+
+			<!-- div that shows the recent adverts, this div shows when the page is loaded, this div will also show if recently added has been clicked-->
+			<div class="ads" data-ng-repeat="advert in adverts" ng-show="recentadverts" data-ng-show="recentAdverts" id="recentAdverts">
+				<!--advert image src called from database, saved in to the scope and called in to the src using the object advert-->
+				<img ng-src="{{advert.image_path}}" alt="{{advert.description}}" height="250" width="42">
+					<!--open div which show advert information-->
+					<div class="desc">
+						<!--displays advert title as a link which will show more of that advert, data-ng-click calls a class in the controller which selects a specific advert and directs the user to that advert-->
+						<p><a data-ng-click="selectAdvert($event, advert, 'advertDetails')" data-ng-class="{'selected':selectedAdvert.advertID===advert.advertID}">{{advert.advert_title}}</a></p>
+						<!--Dog breed name, called from scope which is retrieved from the database-->
+						<p>{{advert.breed_name}}</p>
+						<!--advert price, called from scope which is retrieved from the database-->
+						<p>£{{advert.price}}</p>
+					<!--close advert div-->
+					</div>
+			<!-- close ads div-->
+		    </div>
+		<!--close recently added div-->
+		</div>
+		<!--create div which shows all adverts when the selectAlladverts is called, include the html page and the controller-->
+	  	<div data-ng-show="allAdverts"
+			 data-ng-include="'js/partials/findADog.html'"
+			 data-ng-controller="FindDogListController"
+			 id="allAdverts">
+		<!--close div-->
+    	</div>
+		<!-- shows selling form when the selectSellForm is called, include the html page and controller-->
+		<div data-ng-show="sellForm"
+			 data-ng-include="'js/partials/addAdvert.html'" data-ng-controller="AddAdvertController" id="sellForm">
+		<!--close div-->
+		</div>
+	<!--close wrapper-->
+	</div>
+<!--close main tag-->
+</main>

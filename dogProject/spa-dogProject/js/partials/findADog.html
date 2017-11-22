@@ -1,0 +1,37 @@
+<!--open wrapper -->
+<div class="wrapper">
+    <!--open div-->
+    <div id="allAdverts">
+        <!--open section-->
+        <section>
+            <!--create div which will contain a angular search bar-->
+            <div id="search">
+                <!--heading-->
+                <h3>
+                    Search For A Dog
+                </h3>
+                <!-- input type text, this used ng-model which saves what the user inputs and links to the filter to display adverts that match that word-->
+                <input type="text" ng-model="searchKeyWord" placeholder="Search For A Dog" />
+            <!--close div-->
+            </div>
+            <!--div which contains all adverts, filter links to the ng-model searchKeyWord to display adverts that match that keyword-->
+            <div class="ads" data-ng-repeat="advert in adverts | filter:searchKeyWord" id="findADog">
+                <!--advert image src called from database, saved in to the scope and called in to the src using the object advert-->
+                <img ng-src="{{advert.image_path}}" alt="{{advert.description}}" height="250" width="42">
+                    <!--open div which show advert information-->
+                    <div class="desc">
+                        <!--displays advert title as a link which will show more of that advert, data-ng-click calls a class in the controller which selects a specific advert and directs the user to that advert-->
+                        <p><a data-ng-click="selectAdvert($event, advert)" data-ng-class="{'selected':selectedAdvert.advertID===advert.advertID}">{{advert.advert_title}}</a></p>
+                        <!--Dog breed name, called from scope which is retrieved from the database-->
+                        <p>{{advert.breed_name}}</p>
+                        <!--advert price, called from scope which is retrieved from the database-->
+                        <p>{{advert.price}}</p>
+                    </div>
+            <!--close advert details div-->
+            </div>
+        <!--close section-->
+        </section>
+    <!-- close div-->
+    </div>
+<!-- close wrapper-->
+</div>

@@ -1,0 +1,37 @@
+<!--open wrapper -->
+<div class="wrapper">
+    <!--all advert div-->
+    <div id="allAdverts">
+        <!--open section tag-->
+        <section>
+            <!--page title-->
+            <h3>
+                Report Advert
+            </h3>
+            <!--paragrph
+            <p>Please complete the form below with details of why the advert is being reported</p>
+            <!--open form tag which will be sent to a php page which will ask the user for morre info-->
+            <form ng-controller="reportAdvertController" id="report">
+                <!--open fieldset-->
+                <fieldset>
+
+                    <div id="form-content">
+                        <label for="report">Report type*</label></br>
+                        <input type="radio" name="report" value="illegal" ng-model="report_type" required> This dog is an illegal breed<br>
+                        <input type="radio" name="report" value="spam" ng-model="report_type"> This advert is spam<br>
+                        <input type="radio" name="report" value="duplicate" ng-model="report_type"> This advert is a duplicate<br>
+                        <input type="radio" name="report" value="postingrules" ng-model="report_type"> This advert goes against posting rules<br>
+                    </div>
+                    <br>
+                    <div id="form-content">
+                        <textarea type="text" name="description" placeholder="Please provide us with more information" ng-model="description"></textarea>
+                    </div>
+
+                    <input type="submit" name="submit" value="Report" ng-click="reportAdvert()">
+
+                </fieldset>
+            </form>
+
+        </section>
+    </div>
+</div>

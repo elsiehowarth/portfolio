@@ -1,0 +1,29 @@
+<!--open main tag-->
+<main id="content">
+    <!--open wrapper -->
+    <div class="wrapper">
+        <!--open form tag which calls the add advert image controller for the data to bind to that controller-->
+        <form ng-controller="AddAdvertImage" id="imageUpload" enctype="multipart/form-data">
+            <!--open fieldset-->
+			 <fieldset>
+                 <!--heading-->
+                 <h4>
+                     Advert Images:
+                 </h4>
+                 <!--advert image file field and label, file-input is a customer directive which allows files to be saved in an object -->
+                 <div id="form-content">
+                     <label for="image_path">Select image to upload*:</label></br>
+                     <!--input file tag-->
+                     <input type="file" name="image_path" value="image_path" file-input="image_path">
+                 </div>
+                 <!--end of advert image upload-->
+                 <!--submit button which will submit form, ng-click used to call class in controller and store all the inputted data-->
+                 <input type="submit" name="submit" value="Upload" ng-click="addAdvertImage()">
+             <!--close fieldset-->
+             </fieldset>
+        <!--close form tag-->
+        </form>
+    <!--close div-->
+    </div>
+<!--close main tag-->
+</main>

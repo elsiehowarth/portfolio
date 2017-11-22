@@ -1,0 +1,75 @@
+<div class="wrapper">
+<form ng-controller="registerController">
+    <div id="form-content">
+        <label for="title">Title</label></br>
+            <select id="title" name="title" ng-model="title" ng-model="title">
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Ms">Ms</option>
+                <option value="Doctor">Doctor</option>
+            </select>
+    </div>
+
+    <div id="form-content">
+        <label for="firstname">First Name</label></br>
+            <input type="text" name="firstName" required="required" placeholder='&#xf007; Please Enter your First Name' ng-model="firstName">
+    </div>
+
+    <div id="form-content">
+        <label for="surname">Surname</label></br>
+            <input type="text" name="surname" required="required" placeholder='&#xf007; Please Enter your Surname' ng-model="surname">
+    </div>
+
+    <div id="form-content">
+        <label for="email">Email</label></br>
+             <input type="email" class="form-control" required="required" id="email" required="required" name="email" placeholder='&#xf0e0; Enter your email' ng-model="email">
+    </div>
+
+    <div id="form-content">
+        <label for="addressLine1">Address Line 1</label></br>
+            <input type="text" name="addressLine1" required="required" placeholder='&#xf015; Enter address line 1' ng-model="addressLine1">
+    </div> 
+
+    <div id="form-content">
+        <label for="addressLine2">Address Line 2</label></br>
+            <input type="text" name="addressLine2" placeholder='&#xf015; Enter address line 2' ng-model="addressLine2">
+    </div> 
+
+     <div class="form-content">
+        <label for="county">County</label></br>
+            <select class="" required id="countyID" name="countyID" ng-model="countyID">
+                    <option value="0" selected="selected">All Counties</option>
+                    <option data-ng-repeat="county in countys" value="{{county.countyID}}">{{county.countyname}}</option>
+                </select>
+     </div> 
+
+    <div id="form-content">
+        <label for="dob">Date of Birth</label></br>
+            <input type="date" class="form-control" required="required" id="dob" required="required" name="dob" placeholder='&#xf0e0; Enter your date of birth' ng-model="dob">
+    </div> 
+
+    <div id="form-content">
+        <label for="contactNumber">Contact Number</label></br>
+            <input type="text" class="form-control" id="contactNumber" required="required" name="contactNumber" placeholder='&#xf095; Please Enter your Contact Number' ng-model="contactNumber">
+    </div>
+
+    <div id="form-content">
+        <label for="username">Username</label></br>
+           <input type="text" name="username" required="required" placeholder='&#xf007; Enter a Username' ng-model="username">
+    </div>
+
+    <div id="form-content">
+        <label for="password">Choose Password</label></br>
+            <input type="password" class="form-control" required="required" id="password" required="required" name="password" placeholder='&#xf084; Enter a password' ng-model="password">
+    </div>
+
+    <div id="form-content">
+        <label for="Confirmpassword">Confirm Password</label></br>
+            <input type="password" class="form-control" required="required" id="Confirmpassword" required="required" name="Confirmpassword" placeholder='&#xf084; Enter a password' ng-model="Confirmpassword">
+    </div>  
+
+     <button ng-click="registerData()">Register</button><br>
+
+</form> 
+</div>

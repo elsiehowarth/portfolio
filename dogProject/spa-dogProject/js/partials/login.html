@@ -1,0 +1,24 @@
+
+<div id="login-form">
+		<h3>
+			Login
+		</h3>
+			<form name="login" ng-controller="loginController as loginCtrl" ng-submit="loginCtrl.login()" method="POST">
+				 <div id="form-content">
+		            <div class="input-group">
+						<input type="text" name="username" ng-model="loginCtrl.username" placeholder='&#xf007; Enter your Username' autofocus required>
+		            </div>
+		        </div>
+
+	            <div id="form-content">
+	                <div class="input-group">
+	                	<input type="password" name="password" placeholder='&#xf007; Enter your Password' autofocus ng-model="loginCtrl.password" required>
+		            </div>
+		        </div>
+
+		       <input type="submit" value="Login"> 
+
+			 </form>
+		</div>
+
+</div>
